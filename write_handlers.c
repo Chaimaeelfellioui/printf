@@ -28,11 +28,11 @@ int handle_write_char(char c, char buffer[],
 	buffer[i] = '\0';
 
 	if (width > 1)
-	{	
+	{
 		buffer[BUFF_SIZE - 1] = '\0';
 		for (i = 0; i < width - 1; i++)
 			buffer[BUFF_SIZE - i - 2] = padd;
-		
+
 		if (flags & F_MINUS)
 			return (write(1, &buffer[0], 1) +
 					write(1, &buffer[BUFF_SIZE - i - 1], width - 1));
@@ -68,7 +68,7 @@ int write_number(int is_negative, int ind, char buffer[],
 	if ((flags & F_ZERO) && !(flags & F_MINUS))
 		padd = '0';
 	if (is_negative)
-		xtra_ch = '-';
+		extra_ch = '-';
 	else if (flags & F_PLUS)
 		extra_ch = '+';
 	else if (flags & F_SPACE)
@@ -92,8 +92,8 @@ int write_number(int is_negative, int ind, char buffer[],
  * Return: Number of printed chars.
  */
 int write_num(int ind, char buffer[],
-		int flags, int width, int prec,
-		int length, char padd, char extra_c)
+	int flags, int width, int prec,
+	int length, char padd, char extra_c)
 {
 	int i, padd_start = 1;
 
@@ -171,7 +171,7 @@ int write_unsgnd(int is_negative, int ind,
 		buffer[--ind] = '0';
 		length++;
 	}
-	
+
 	if ((flags & F_ZERO) && !(flags & F_MINUS))
 		padd = '0';
 
@@ -191,7 +191,7 @@ int write_unsgnd(int is_negative, int ind,
 			return (write(1, &buffer[0], i) + write(1, &buffer[ind], length));
 		}
 	}
-	
+
 	return (write(1, &buffer[ind], length));
 }
 
@@ -200,7 +200,7 @@ int write_unsgnd(int is_negative, int ind,
  * @buffer: Arrays of chars
  * @ind: Index at which the number starts in the buffer
  * @length: Length of number
- * @width: Wwidth specifier
+ * @width: Width specifier
  * @flags: Flags specifier
  * @padd: Char representing the padding
  * @extra_c: Char representing extra char
@@ -208,8 +208,8 @@ int write_unsgnd(int is_negative, int ind,
  *
  * Return: Number of written chars.
  */
-int writr(char buffer[], int ind, int length,
-		int width, int flags, char padd, char extra_c, int padd_start)
+int write_pointer(char buffer[], int ind, int length,
+	int width, int flags, char padd, char extra_c, int padd_start)
 {
 	int i;
 
@@ -250,4 +250,3 @@ int writr(char buffer[], int ind, int length,
 		buffer[--ind] = extra_c;
 	return (write(1, &buffer[ind], BUFF_SIZE - ind - 1));
 }
-
