@@ -19,7 +19,7 @@
 #define S_SHORT 1
 
 /**
-<<<<<<< HEAD
+<<<<<<<HEAD
  * struct fmt - Struct for formatting data.
  * @sym: *sym: Pointer to a character string.
  * @fn: func pointer to a function that takes a va_list as an arg.
@@ -33,7 +33,7 @@ typedef struct fmt
  * @fn: The function associated.
  */
 struct fmt
->>>>>>> 47e6c04f6cdf2dd0143a9ea9920b8e5b973570ea
+>>>>>>>47e6c04f6cdf2dd0143a9ea9920b8e5b973570ea
 {
 	char fmt;
 	int (*fn)(va_list, char[], int, int, int, int);
