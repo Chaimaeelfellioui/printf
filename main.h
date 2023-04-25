@@ -6,10 +6,10 @@
 #include <unistd.h>
 
 /**
- *  * struct fmt - Struct for formatting data.
- *   * @sym: *sym: Pointer to a character string.
- *    * @fn: func pointer to a function that takes a va_list as an arg.
- *     */
+ * struct fmt - Struct for formatting data.
+ * @sym: *sym: Pointer to a character string.
+ * @fn: func pointer to a function that takes a va_list as an arg.
+ */
 typedef struct fmt
 {
 		char *sym;
