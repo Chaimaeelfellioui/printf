@@ -26,6 +26,7 @@
  */
 typedef struct fmt
 =======
+/**
  * struct fmt - Struct op
  *
  * @fmt: The format.
